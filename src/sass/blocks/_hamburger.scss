@@ -1,0 +1,23 @@
+.hamburger {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  z-index: 3;
+  width: 36px;
+  height: 25px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-end;
+  cursor: pointer;
+  .line {
+    width: 36px;
+    height: 3px;
+    background: #000;
+    // margin: 6px 0 6px 0;
+    &_little {
+      width: 30px;
+      height: 3px;
+    }
+  }
+}
