@@ -17,4 +17,11 @@ document.addEventListener('DOMContentLoaded', function () {
     menu.classList.remove('active');
     hamburger.classList.add('visible');
   });
+
+  const counters = document.querySelectorAll('.percent__ratings'),
+  lines = document.querySelectorAll('.percent__progress div');
+
+  counters.forEach((val, key) => {
+    lines[key].style.width = val.innerHTML;
+  });
 });
