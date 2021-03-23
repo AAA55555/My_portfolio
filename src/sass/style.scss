@@ -28,6 +28,7 @@
   height: 3px;
   background-color: $main-color;
   margin-top: 25px;
+  margin: 25px auto 0 auto;
 }
 
 @import 'blocks/title';
@@ -37,3 +38,5 @@
 @import 'blocks/hamburger';
 @import 'blocks/menu';
 @import 'blocks/aboute';
+@import 'blocks/resume';
+@import 'blocks/skills';
