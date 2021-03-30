@@ -39,6 +39,28 @@
       row-gap: 50px;
     }
   }
+  .portfolio {
+    &__wrapper {
+      grid-template-columns: repeat(auto-fit, 280px);
+      grid-template-rows: 280px;
+      justify-content: space-around;
+      row-gap: 35px;
+      .horizonal,
+      .vertical {
+        grid-row: unset;
+        grid-column: unset;
+      }
+    }
+  }
+  .contacts {
+    &__wrapper {
+      padding: 0;
+      grid-template-columns: 400px 520px;
+    }
+    &__form {
+      grid-template: 45px 190px 45px / repeat(2, 250px);
+    }
+  }
 }
 
 @media (max-width: 992px) {
@@ -83,7 +105,26 @@
       column-gap: 40px;
     }
     .divider {
-      margin-top: 0;
+      margin: 15px auto 0 auto;
+    }
+  }
+  .price {
+    &__items-wrapper {
+      grid-template-columns: repeat(auto-fit, 350px);
+      justify-content: space-between;
+      padding: 0;
+    }
+  }
+  .contacts {
+    &__wrapper {
+      grid-template-columns: 300px 400px;
+    }
+    &__form {
+      grid-template: 45px 190px 45px / repeat(2, 195px);
+    }
+    &__btn {
+      padding: 8px 25px;
+      line-height: 16px;
     }
   }
 }
@@ -134,6 +175,28 @@
     }
     &__percents {
       grid-template-columns: repeat(1, 350px);
+    }
+  }
+  .portfolio {
+    padding-top: 40px;
+  }
+  .price {
+    padding-top: 40px;
+    &__items-wrapper {
+      margin-top: 20px;
+      justify-content: center;
+    }
+  }
+  .contacts {
+    padding-top: 40px;
+    &__photo {
+      display: none;
+    }
+    &__wrapper {
+      grid-template-columns: 1fr;
+    }
+    &__form {
+      grid-template: 45px 190px 45px / repeat(2, 250px);
     }
   }
 }
@@ -190,6 +253,37 @@
   .skills {
     &__percents {
       grid-template-columns: 1fr;
+    }
+  }
+  .price {
+    &__items-wrapper {
+      grid-template-columns: repeat(auto-fit, 295px);
+    }
+  }
+  .contacts {
+    padding-bottom: 50px;
+    &__form {
+      grid-template: 45px 45px 190px minmax(45px, auto) / 1fr;
+    }
+    &__textarea {
+      grid-column: unset;
+      width: 100%;
+    }
+    &__triggers {
+      grid-column: unset;
+      grid-template-columns: 1fr;
+      column-gap: unset;
+      row-gap: 20px;
+    }
+    &__btn {
+      order: 2;
+      max-width: 220px;
+      margin: 0 auto;
+    }
+    &__policy {
+      width: 180px;
+      margin: 0 auto;
+      line-height: 18px;
     }
   }
 }

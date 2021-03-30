@@ -17,8 +17,8 @@
   &__items {
     &-wrapper {
       display: grid;
-      grid-template: repeat(3, 45px) / repeat(2, 370px);
-      grid-auto-rows: 45px;
+      grid-template: repeat(3, minmax(45px, auto)) / repeat(2, 370px);
+      grid-auto-rows: minmax(45px, auto);
       grid-auto-columns: 370px;
       justify-content: space-between;
       row-gap: 15px;
