@@ -4,11 +4,12 @@ document.addEventListener('DOMContentLoaded', function () {
   const hamburger = document.querySelector('.hamburger'),
     menu = document.querySelector('.menu'),
     closeElem = document.querySelector('.menu__close');
+  let menuItems = document.querySelector('.menu__items');
 
   hamburger.addEventListener('click', () => {
     menu.classList.add('active');
     hamburger.classList.add('hide');
-    if(hamburger.classList.contains('visible')) {
+    if (hamburger.classList.contains('visible')) {
       hamburger.classList.remove('visible');
     }
   });
@@ -18,8 +19,13 @@ document.addEventListener('DOMContentLoaded', function () {
     hamburger.classList.add('visible');
   });
 
+  menuItems.addEventListener('click', () => {
+    menu.classList.remove('active');
+    hamburger.classList.add('visible');
+  });
+
   const counters = document.querySelectorAll('.percent__ratings'),
-  lines = document.querySelectorAll('.percent__progress div');
+    lines = document.querySelectorAll('.percent__progress div');
 
   counters.forEach((val, key) => {
     lines[key].style.width = val.innerHTML;
