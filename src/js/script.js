@@ -15,19 +15,39 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   closeElem.addEventListener('click', () => {
-    menu.classList.remove('active');
-    hamburger.classList.add('visible');
+    closeMenu();
   });
 
   menuItems.addEventListener('click', () => {
+    closeMenu();
+  });
+
+  function closeMenu() {
     menu.classList.remove('active');
     hamburger.classList.add('visible');
-  });
+  }
 
   const counters = document.querySelectorAll('.percent__ratings'),
     lines = document.querySelectorAll('.percent__progress div');
 
   counters.forEach((val, key) => {
     lines[key].style.width = val.innerHTML;
+  });
+
+  window.addEventListener('scroll', () => {
+    let scroll = window.scrollY,
+      promo = document.querySelector('.promo'),
+      promoHeight = getComputedStyle(promo).height.slice(0, 3),
+      bgSvg = document.querySelectorAll('.sidepanel__link svg');
+
+    bgSvg.forEach((val) => {
+      let coordinatSvg = val.getBoundingClientRect().top + pageYOffset;
+      if (coordinatSvg > promoHeight) {
+        val.style.fill = '#000';
+      }
+      if (coordinatSvg < promoHeight) {
+        val.style.fill = '#fff';
+      }
+    });
   });
 });

@@ -151,6 +151,9 @@
     }
     &__photo {
       grid-row: unset;
+      img {
+        object-fit: contain;
+      }
     }
     &__skills {
       grid-template-columns: repeat(2, 260px);
@@ -284,6 +287,16 @@
       width: 180px;
       margin: 0 auto;
       line-height: 18px;
+    }
+  }
+}
+
+@media (max-width: 330px) {
+  .about {
+    &__photo {
+      img {
+        object-fit: cover;
+      }
     }
   }
 }
