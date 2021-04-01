@@ -623,9 +623,9 @@
             <div class="title title_fz14 contacts__text">
               Или оставьте ваши данные и я сам вам напишу:
             </div>
-            <form action="mailer/smart.php" class="contacts__form" method="POST">
+            <form action="#" class="contacts__form" id="form">
               <div class="contacts__input">
-                <input required id="name" type="text" placeholder="Иван" />
+                <input required id="name" type="text" placeholder="Иван"  name="name"/>
                 <label for="name">Ваше имя</label>
               </div>
               <div class="contacts__input">
@@ -653,6 +653,8 @@
         </div>
       </div>
     </section>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
