@@ -5,7 +5,9 @@
   padding: 12px 25px;
   border: none;
   border-radius: 4px;
+  outline: none !important;
   &:hover {
     box-shadow: 0px -0px 10px 0px red;
   }
+  
 }

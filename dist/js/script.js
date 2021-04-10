@@ -1,6 +1,8 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', function () {
+  //menu
+
   const hamburger = document.querySelector('.hamburger'),
     menu = document.querySelector('.menu'),
     closeElem = document.querySelector('.menu__close');
@@ -34,6 +36,8 @@ document.addEventListener('DOMContentLoaded', function () {
     lines[key].style.width = val.innerHTML;
   });
 
+  //scroll
+
   window.addEventListener('scroll', () => {
     let scroll = window.scrollY,
       promo = document.querySelector('.promo'),
@@ -51,17 +55,60 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  document.querySelectorAll('a[href^="#"').forEach((link) => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      let href = this.getAttribute('href').substring(1);
+
+      const scrollTarget = document.getElementById(href);
+
+      const topOffset = 0;
+      const elementPosition = scrollTarget.getBoundingClientRect().top;
+      const offsetPosition = elementPosition - topOffset;
+
+      window.scrollBy({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    });
+  });
+
+  // form
+
   $('form').submit(function (e) {
     e.preventDefault();
     $.ajax({
       type: 'POST',
       url: 'mailer/smart.php',
       data: $(this).serialize(),
-    }).done(function () {
-      $(this).find('input').val('');
+    })
+      .done(function () {
+        $(this).find('input').val('');
 
-      $('form').trigger('reset');
-    });
+        // $('.modal-wrapper').show('slow').css('display', 'block');
+        $('.modal-wrapper').css('display', 'block');
+        modal();
+        $('form').trigger('reset');
+      })
+      .fail(function () {
+        $('.modal-wrapper-error').css('display', 'block');
+      });
+
     return false;
   });
+
+  function modal() {
+    setTimeout(() => {
+      $('.modal-wrapper').css('display', 'none');
+    }, 3000);
+  }
+
+  $('.modal__close').on('click', () => {
+    $('.modal-wrapper, .modal-wrapper-error').css('display', 'none');
+  });
+
+  // animation
+
+  new WOW().init();
 });

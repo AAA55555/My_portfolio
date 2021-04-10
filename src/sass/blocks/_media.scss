@@ -300,3 +300,9 @@
     }
   }
 }
+
+@media (max-height: 510px) {
+  .menu .socials {
+    display: none;
+  }
+}

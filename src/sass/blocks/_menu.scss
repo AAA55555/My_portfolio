@@ -85,7 +85,7 @@
   }
   .socials {
     position: absolute;
-    width: 90px;
+    width: 150px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -95,7 +95,7 @@
     -moz-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
-    bottom: 50px;
+    bottom: 70px;
     &__link {
       width: 20px;
       height: 20px;
